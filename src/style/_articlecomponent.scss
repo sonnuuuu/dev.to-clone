@@ -1,0 +1,158 @@
+.article{
+    margin-bottom: 0.5rem;
+    background-color: #fff;
+    @include bd-radius(5px);
+    @include border(1px, $main-2);
+
+    &:not(:first-child) {
+        .article__image {
+        display: none;
+        }
+    }
+
+    &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center center;
+    padding-bottom: 40%;
+    border-radius: 5px 5px 0 0;
+  }
+   
+    .articleDetails{
+        padding: 1rem;
+        padding-right: 0;
+        .writer-data{
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+            .user-profile{
+                width: 2.5rem;
+                img{
+                    width: 100%;
+                    @include bd-radius(50%);
+                }
+            }
+            .user-info{
+                display: flex;
+                flex-direction: column;
+                
+                .user-name{
+                    font-weight: 450;
+                    font-size: 0.95rem;
+                    color: $main-8;
+                    &:hover{
+                        color: $main-10;
+                    }
+                }
+                .timestamp{
+                    font-size: 0.875rem;
+                    color: $main-7;
+                    &:hover{
+                        color: $main-10;
+                        }
+                }
+            }
+        
+        }
+        .writer-details{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 0.5rem;
+            padding-left: 1rem;
+            
+        }
+        h2{
+            margin-top: 0.5rem;
+            &:hover{
+                color:$light-blue;
+            }
+
+        }
+        .tags{
+            margin-top: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            span{
+                font-size: 0.9rem;
+                padding: 0.2rem 0.4rem;
+                @include bd-radius(5px);
+                &:hover{
+                    @include border(1px, $main-2);
+                    @include bg-color($hover-color);
+                }
+            }
+
+        }
+    }
+
+    .additional-info{
+        margin-top: 1rem;
+        @include flex(center, space-between);
+        margin-right: 1rem;
+
+        .reactions{
+            @include flex-align(center);
+            .reactions-info{
+               @include flex-align(center);
+                column-gap: 5px;
+                padding: 0.4rem 0.5rem;
+                .icons-container{
+                    @include flex-align(center);
+                    cursor: pointer;
+                    span{
+                        @include flex-align(center);
+                        @include border(1px, $main-1);
+                        @include bd-radius(50%);
+                        padding: 2px;
+                        @include bg-color($main-a);
+
+                    }
+                }
+                &:hover{
+                    @include bd-radius(5px);
+                    @include bg-color($hover-color);
+
+                }
+                
+            }
+            .comments{
+                padding: 0.3rem 0.5rem;
+                @include bd-radius(5px);
+                span{
+                    @include flex-align(center);
+                    column-gap: 5px;
+                    i{
+                        display: flex;
+                        font-size: 1.2rem;
+                        :hover{
+                            color:$light-blue;
+                        }
+                    }
+
+                }
+                &:hover{
+                    @include bg-color($hover-color);
+                }
+            }
+        }
+
+        .save{
+            @include flex-align(center);
+            column-gap: 0.5rem;
+            
+            i{
+                display: flex;
+                font-size: 1.4rem;
+                padding: 0.5rem;
+                &:hover{
+                    @include bg-color($hover-color);
+                    @include bd-radius(5px);
+                    color: $light-blue;
+                }
+            }
+        }
+    }
+}
